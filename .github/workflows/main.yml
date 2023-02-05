@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - '*'
+    except:
+      - main
   pull_request:
     branches:
       - '*'
@@ -14,19 +16,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      - name: Install dependencies
+      - name: Ansible Lint
         run: |
-          pip3 install git+https://github.com/ansible/ansible-lint
-#      - name: Create ansible-lint configuration folder
-#        run: |
-#          mkdir ~/.ansible-lint
-#          echo "warn_list:  # or 'skip_list' to silence them completely
-#            - yaml  # Violations reported by yamllint" > ~/.ansible-lint/config
-      - name: Run ansible-lint
-        run: |
-          ansible-lint --v
-          ansible-lint --exclude=new-line-at-end-of-file  .
+          ansible-playbook lint.yml

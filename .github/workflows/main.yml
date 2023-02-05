@@ -20,12 +20,9 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-          python -m pip install ansible
-          python -m pip install ansible-lint
-      - name: Create ansible-lint configuration file
-        run: |
-          mkdir -p .config
-          echo "warn_list:
-            - yaml[new-line-at-end-of-file]" > .config/ansible-lint.yml
+          sudo apt-get update
+          sudo apt-get install ansible
+          sudo apt-get install ansible-lint
+
       - name: Run ansible-lint
         run: ansible-lint .

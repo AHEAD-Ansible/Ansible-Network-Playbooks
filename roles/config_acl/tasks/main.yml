@@ -1,6 +1,6 @@
 ---
 - name: "Include ACL Tasks"
-  include_tasks: "{{ ansible_network_os }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_network_os }}.yml"
   when: ansible_network_os is defined
   with_first_found:
     - files:

@@ -1,21 +1,15 @@
-name: Main Workflow
-
-on:
-  push:
-    branches:
-      - '*'
-    except:
-      - main
-  pull_request:
-    branches:
-      - '*'
+name: ansible-lint
+on: [push, pull_request]
 
 jobs:
-  ansible-lint:
+  build:
+    name: Ansible Lint
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Ansible Lint
-        run: |
-          ansible-playbook --connection=local 127.0.0.1 lint.yml
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint-action@main

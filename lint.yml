@@ -2,9 +2,6 @@
   hosts: localhost
   gather_facts: false
   connection: local
-  inventory:
-    host_vars:
-      localhost: {}
 
   tasks:
     - name: Ansible Lint

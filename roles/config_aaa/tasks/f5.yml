@@ -1,6 +1,6 @@
 ---
 - name: Generate ISE TACACS Key
-  set_fact:
+  ansible.builtin.set_fact:
     ise_pass: "{{ lookup('password', '/dev/null length=18 chars=ascii_letters,digits') }}"
     cacheable: true
   no_log: true
@@ -28,7 +28,7 @@
     servers:
       - address: "{{ item }}"
     state: present
-    use_for_auth: yes
+    use_for_auth: true
     provider: "{{ provider }}"
   with_items: "{{ aaa_servers }}"
   delegate_to: localhost

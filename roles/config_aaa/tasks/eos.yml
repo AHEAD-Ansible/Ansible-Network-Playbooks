@@ -1,5 +1,5 @@
 - name: Generate AAA TACACS Key
-  set_fact:
+  ansible.builtin.set_fact:
     aaa_key: "{{ lookup('password', '/dev/null length=18 chars=ascii_letters,digits') }}"
     cacheable: true
   when:

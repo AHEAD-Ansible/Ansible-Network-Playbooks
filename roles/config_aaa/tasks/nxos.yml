@@ -1,6 +1,6 @@
 ---
 - name: Generate ISE TACACS Key
-  set_fact:
+  ansible.builtin.set_fact:
     ise_pass: "{{ lookup('password', '/dev/null length=18 chars=ascii_letters,digits') }}"
     cacheable: true
   when: ise_pass is not defined

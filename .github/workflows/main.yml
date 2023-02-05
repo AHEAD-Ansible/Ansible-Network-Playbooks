@@ -21,8 +21,9 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install ansible
-          sudo apt-get install ansible-lint
+          sudo apt-get install python3
+          sudo apt-get install python3-pip
+          pip3 install ansible-lint
       - name: Create ansible-lint configuration folder
         run: |
           mkdir ~/.ansible-lint

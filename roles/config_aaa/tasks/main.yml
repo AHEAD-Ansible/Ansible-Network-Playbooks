@@ -1,5 +1,5 @@
 ---
 - name: "Include AAA Tasks"
-  include_tasks: "{{ ansible_network_os }}.yml"
+  ansible.builtin.include_tasks: "{{ ansible_network_os }}.yml"
   tags:
     - aaa

@@ -3,8 +3,8 @@
   git:
     repo: "{{ network_backup_repository }}"
     dest: "{{ network_backup_dir }}"
-    accept_hostkey: yes
-    force: yes
+    accept_hostkey: true
+    force: true
   register: clone_result
   delegate_to: localhost
   run_once: true
@@ -27,7 +27,7 @@
         chdir: "{{ network_backup_dir }}"
       register: status_results
       changed_when: False
-      ignore_errors: yes
+      ignore_errors: true
       delegate_to: localhost
       run_once: true
 

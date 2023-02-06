@@ -3,7 +3,6 @@ exclude_paths:
   - .github/
   - group_vars/
   - host_vars/
-  - roles/config_backup/
   - roles/config_bandwidth/
   - roles/config_credentials/
   - roles/config_dns/

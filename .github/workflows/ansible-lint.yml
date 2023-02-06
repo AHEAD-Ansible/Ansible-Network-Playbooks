@@ -13,3 +13,5 @@ jobs:
 
       - name: Run ansible-lint
         uses: ansible/ansible-lint-action@main
+        with:
+            config: ".config/ansible-lint.yml"

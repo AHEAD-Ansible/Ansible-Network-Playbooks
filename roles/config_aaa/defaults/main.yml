@@ -4,4 +4,4 @@ aaa_servers:
 
 aaa_group_name: TACACS
 
-aaa_create_key: yes
+aaa_create_key: true

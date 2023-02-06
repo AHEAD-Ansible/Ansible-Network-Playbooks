@@ -1,0 +1,25 @@
+exclude_paths:
+  - .cache/
+  - .github/
+  - group_vars/
+  - host_vars/
+  - roles/config_backup/
+  - roles/config_bandwidth/
+  - roles/config_credentials/
+  - roles/config_dns/
+  - roles/config_evpn/
+  - roles/config_ha/
+  - roles/config_interfaces/
+  - roles/config_ntp/
+  - roles/config_provisioning/
+  - roles/config_routing/
+  - roles/config_save/
+  - roles/config_snmp/
+  - roles/config_syslog/
+  - roles/config_vpn/
+  - roles/create_f5/
+  - roles/device_upgrade/
+  - roles/facts/
+  - roles/snow_compliance/
+  - roles/snow_network_cmdb/
+  - rextfsm

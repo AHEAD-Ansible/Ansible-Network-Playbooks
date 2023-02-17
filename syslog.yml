@@ -1,7 +1,7 @@
 ---
 - name: Configure Syslog
   hosts: all
-  gather_facts: no
+  gather_facts: true
 
   roles:
     - config_syslog
